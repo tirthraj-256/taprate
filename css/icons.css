@@ -1,0 +1,81 @@
+/* ═══════════════════════════════════════════════════════════
+   TapRate — Premium Outline Icons (Lucide-style)
+   Thin stroke · consistent 24×24 · stroke-width 1.5
+   ═══════════════════════════════════════════════════════════ */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.icon svg {
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon--sm svg { width: 18px; height: 18px; }
+.icon--md svg { width: 24px; height: 24px; }
+.icon--lg svg { width: 28px; height: 28px; }
+
+/* Feature card icon container */
+.feature-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.14), rgba(37, 99, 235, 0.05));
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--color-gold);
+  font-size: 26px;
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.45s var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+
+.feature-card__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.feature-card:hover .feature-card__icon {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(37, 99, 235, 0.08));
+  border-color: rgba(37, 99, 235, 0.28);
+  color: #b08850;
+}
+
+/* Dark / gradient sections */
+.section--gradient .feature-card__icon,
+.feature-card--dark .feature-card__icon {
+  background: rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.2);
+  color: var(--color-gold-light);
+}
+
+.section--gradient .feature-card--dark {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.section--gradient .feature-card--dark:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+/* Filled accent dots inside icons (Lucide pattern) */
+.icon svg [data-fill="true"] {
+  fill: currentColor;
+  stroke: none;
+}

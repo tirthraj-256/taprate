@@ -1,0 +1,500 @@
+/* ═══════════════════════════════════════════════════════════
+   TapRate — Premium Pinterest Gallery
+   Masonry · hover zoom · video · 360° · before/after
+   ═══════════════════════════════════════════════════════════ */
+
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 8px;
+  grid-auto-flow: dense;
+  gap: 1.25rem;
+}
+
+.gallery-pin {
+  grid-row-end: span var(--pin-rows, 28);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  transition: box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  min-height: calc(var(--pin-rows, 28) * 8px);
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-pin:hover {
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  transform: translateY(-3px);
+}
+
+.gallery-pin--tall { --pin-rows: 38; }
+.gallery-pin--standard { --pin-rows: 28; }
+.gallery-pin--wide {
+  grid-column: span 2;
+  --pin-rows: 24;
+}
+
+.gallery-pin__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  flex: 1;
+  min-height: calc(var(--pin-rows, 28) * 8px);
+  padding: 0;
+  border: none;
+  background: linear-gradient(145deg, #f8fafc, #eef2f7);
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left;
+}
+
+.gallery-pin__media img,
+.gallery-pin__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.gallery-pin:hover .gallery-pin__media:not(.gallery-pin__360):not(.gallery-compare) img,
+.gallery-pin:hover .gallery-pin__media:not(.gallery-pin__360):not(.gallery-compare) video {
+  transform: scale(1.08);
+}
+
+.gallery-pin__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    rgba(15, 23, 42, 0.75) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-pin:hover .gallery-pin__overlay {
+  opacity: 1;
+}
+
+.gallery-pin__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.375rem;
+}
+
+.gallery-pin__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.gallery-pin__meta {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0.25rem;
+}
+
+/* Type badges */
+.gallery-pin__badge {
+  position: absolute;
+  top: 0.875rem;
+  left: 0.875rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+.gallery-pin__badge--video {
+  background: rgba(15, 23, 42, 0.72);
+  color: #fff;
+}
+
+.gallery-pin__badge--360 {
+  background: rgba(245, 158, 11, 0.92);
+  color: var(--color-primary);
+}
+
+.gallery-pin__badge--compare {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-primary);
+}
+
+.gallery-pin__badge svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Video play */
+.gallery-pin__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.15);
+  transition: background 0.35s ease;
+  pointer-events: none;
+}
+
+.gallery-pin:hover .gallery-pin__play {
+  background: rgba(15, 23, 42, 0.25);
+}
+
+.gallery-pin__play-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gallery-pin:hover .gallery-pin__play-btn {
+  transform: scale(1.1);
+}
+
+.gallery-pin__play-btn svg {
+  width: 26px;
+  height: 26px;
+  fill: var(--color-primary);
+  margin-left: 3px;
+}
+
+/* 360° viewer */
+.gallery-pin__360 {
+  perspective: 900px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.gallery-pin__360.is-dragging {
+  cursor: grabbing;
+}
+
+.gallery-pin__360-inner {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  transform-style: preserve-3d;
+}
+
+.gallery-pin__360-inner img {
+  max-height: 100%;
+  width: auto;
+  max-width: 85%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 32px rgba(15, 23, 42, 0.18));
+  transition: transform 0.08s linear;
+  transform: rotateY(var(--rotate-y, 0deg));
+}
+
+.gallery-pin__360-hint {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.375rem 0.875rem;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.gallery-pin__360:hover .gallery-pin__360-hint,
+.gallery-pin__360.is-dragging .gallery-pin__360-hint {
+  opacity: 1;
+}
+
+/* Before / After compare */
+.gallery-compare {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+  cursor: ew-resize;
+}
+
+.gallery-compare__layer {
+  position: absolute;
+  inset: 0;
+}
+
+.gallery-compare__layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-compare__before img {
+  filter: grayscale(0.55) brightness(0.88) contrast(0.95);
+}
+
+.gallery-compare__after {
+  width: 50%;
+  overflow: hidden;
+  border-right: 3px solid var(--color-gold);
+  box-shadow: 4px 0 24px rgba(15, 23, 42, 0.15);
+}
+
+.gallery-compare__after img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  max-width: none;
+}
+
+.gallery-compare__label {
+  position: absolute;
+  top: 0.875rem;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gallery-compare__label--before {
+  left: 0.875rem;
+  background: rgba(100, 116, 139, 0.85);
+  color: #fff;
+}
+
+.gallery-compare__label--after {
+  right: 0.875rem;
+  background: rgba(245, 158, 11, 0.95);
+  color: var(--color-primary);
+}
+
+.gallery-compare__handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--color-gold);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.gallery-compare__handle svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--color-primary);
+  fill: none;
+  stroke-width: 2;
+}
+
+.gallery-compare__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 4;
+  margin: 0;
+}
+
+/* Gallery lightbox / video modal */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.gallery-modal--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-modal__inner {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  transform: scale(0.94);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-modal--open .gallery-modal__inner {
+  transform: scale(1);
+}
+
+.gallery-modal__inner img,
+.gallery-modal__inner video,
+.gallery-modal__inner iframe {
+  width: 100%;
+  max-height: 85vh;
+  display: block;
+  object-fit: contain;
+}
+
+.gallery-modal__close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.gallery-modal__caption {
+  padding: 1rem 1.25rem;
+  background: #fff;
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+}
+
+.gallery-modal__caption strong {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  margin-bottom: 0.25rem;
+}
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-filter {
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  border: 1px solid var(--color-gray-200);
+  background: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-filter:hover,
+.gallery-filter--active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.gallery-pin.is-hidden {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .gallery-masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-pin--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-masonry {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 6px;
+  }
+
+  .gallery-pin--wide {
+    grid-column: span 1;
+  }
+
+  .gallery-pin--tall { --pin-rows: 32; }
+  .gallery-pin--standard { --pin-rows: 26; }
+  .gallery-pin--wide { --pin-rows: 22; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-pin__media img,
+  .gallery-pin__media video,
+  .gallery-pin:hover .gallery-pin__media img,
+  .gallery-pin:hover .gallery-pin__media video {
+    transition: none;
+    transform: none;
+  }
+}

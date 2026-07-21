@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════════════════════════
+   TapRate — Typography
+   Headings: Sora · Body: Inter · Numbers: Manrope
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-number: 'Manrope', system-ui, sans-serif;
+}
+
+/* ── Headings (Sora) ── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+h1 {
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+h2 {
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+h3,
+h4 {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.page-hero h1,
+.hero h1 {
+  letter-spacing: -0.04em;
+}
+
+.section-header .eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+/* ── Body (Inter) ── */
+body,
+p,
+li,
+label,
+input,
+textarea,
+select,
+.font-body {
+  font-family: var(--font-body);
+}
+
+body {
+  line-height: 1.65;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+/* ── Numbers (Manrope) ── */
+.font-number,
+[data-count],
+[data-ba-count],
+.stat__number,
+.ba-number,
+.ba-bar-value,
+.ba-stat-pill strong,
+.card__price,
+.card--luxury .card__price,
+.pricing-card__price,
+.process-step::before,
+.hiw__order-num,
+.hero-glass__stat,
+.hero-sc-call__number,
+.industry-card__stat {
+  font-family: var(--font-number);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: 'tnum' 1, 'lnum' 1;
+  letter-spacing: -0.02em;
+}
+
+.stat__number,
+.ba-number {
+  font-weight: 800;
+}
+
+.card__price,
+.pricing-card__price,
+.card--luxury .card__price {
+  font-weight: 700;
+}
+
+/* Buttons & nav labels stay Sora for brand consistency */
+.btn,
+.nav__link,
+.faq-question,
+.card__title,
+.industry-card__title,
+.testimonial-card__author {
+  font-family: var(--font-display);
+}
+
+.card__desc,
+.testimonial-card__quote,
+.section-header p,
+.hero__subtitle {
+  font-family: var(--font-body);
+}
