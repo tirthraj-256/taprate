@@ -24,6 +24,16 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+[[headers]]
+  for = "/images/products/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/portfolio.html"
+  to = "/products.html"
+  status = 301
+
 [[redirects]]
   from = "/home"
   to = "/index.html"

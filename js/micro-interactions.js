@@ -115,7 +115,7 @@
 
   /** Enhanced fade-up with stagger */
   function initScrollReveal() {
-    const grids = '.feature-grid, .card-grid, .stats, .process-grid, .hiw__order-steps, .pricing-grid, .blog-grid, .gallery-masonry, .faq-list, .logo-wall, .industry-grid';
+    const grids = '.feature-grid, .card-grid, .stats, .process-grid, .hiw__order-steps, .pricing-grid, .blog-grid, .faq-list, .logo-wall, .industry-grid';
     document.querySelectorAll(grids).forEach((grid) => {
       grid.querySelectorAll('.reveal').forEach((el, i) => {
         el.style.transitionDelay = `${i * 0.07}s`;

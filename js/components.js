@@ -85,7 +85,6 @@ function renderFooter() {
         </ul></div>
         <div><h4>Company</h4><ul class="footer__links">
           <li><a href="${base}about.html">About Us</a></li>
-          <li><a href="${base}portfolio.html">Portfolio</a></li>
           <li><a href="${base}testimonials.html">Testimonials</a></li>
           <li><a href="${base}case-studies.html">Case Studies</a></li>
           <li><a href="${base}blog.html">Blog</a></li>
@@ -140,8 +139,4 @@ document.addEventListener('DOMContentLoaded', () => {
   const testimonials = document.createElement('script');
   testimonials.src = base + 'js/testimonials.js';
   document.body.appendChild(testimonials);
-
-  const gallery = document.createElement('script');
-  gallery.src = base + 'js/gallery.js';
-  document.body.appendChild(gallery);
 });
