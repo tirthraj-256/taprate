@@ -46,7 +46,7 @@ The NFC business solutions market in India is undergoing a structural shift from
 
 - **Contactless networking:** BNI chapters, trade fairs, and corporate events across Gujarat have normalized tap-to-share over paper card exchange. Ahmedabad alone hosts 15+ active BNI chapters and hundreds of monthly networking events.
 - **Review economy:** Google reviews directly influence local pack rankings, Zomato/Swiggy visibility, and customer trust. Restaurants on SG Highway and Satellite report that a 0.3-star rating difference can shift weekend footfall by 15–20%.
-- **Promotional products evolution:** Traditional visiting cards (₹200–400 per 500 units) are being replaced by smart cards (₹499 one-time) that never run out and can be reprogrammed.
+- **Promotional products evolution:** Traditional visiting cards (₹200–400 per 500 units) are being replaced by smart cards (₹199 one-time) that never run out and can be reprogrammed.
 - **Custom manufacturing demand:** Agencies, event organizers, and corporate HR teams want white-label NFC products with GST invoicing — not Amazon generic imports.
 
 **Estimated India market size:** ₹150–200 crore annually for NFC business cards, review standees, and related promotional NFC products. The market remains highly fragmented — 200+ resellers nationally, fewer than 20 with genuine in-house manufacturing capability.
@@ -70,8 +70,8 @@ TapRate operates as a **manufacturer-direct B2B and B2C business** based in Sout
 
 | Product | Starting Price |
 |---------|----------------|
-| PVC NFC Smart Business Card | ₹499 |
-| Metal NFC Business Card | ₹1,499 |
+| PVC NFC Smart Business Card | ₹199 |
+| Metal NFC Business Card | ₹999 |
 | Google Review NFC Standee | ₹799 |
 | Google Review NFC Card | ₹349 |
 
@@ -89,7 +89,7 @@ TapRate operates as a **manufacturer-direct B2B and B2C business** based in Sout
 **2. Freelancers, Consultants & BNI Members**
 - **Profile:** CAs, lawyers, architects, digital marketers, insurance advisors aged 28–50
 - **Pain:** Paper cards wasted at events, follow-up rate under 10%, unprofessional image with generic cards
-- **Product fit:** PVC NFC Smart Business Card (₹499); Metal card (₹1,499) for senior partners
+- **Product fit:** PVC NFC Smart Business Card (₹199); Metal card (₹999) for senior partners
 - **Buying trigger:** BNI induction, new firm registration, networking event season (Oct–Feb)
 - **Decision timeline:** 3–7 days; often compare 2–3 providers
 
@@ -165,7 +165,7 @@ Ahmedabad is Gujarat's commercial capital with distinct business culture charact
 
 ## 1.6 Customer Psychology & Buying Behavior
 
-**Status signaling:** In Gujarat's relationship-driven business culture, the physical card still matters. Metal NFC cards at ₹1,499 signal success at chambers of commerce and high-end networking. PVC at ₹499 signals tech-forward professionalism without ostentation.
+**Status signaling:** In Gujarat's relationship-driven business culture, the physical card still matters. Metal NFC cards at ₹999 signal success at chambers of commerce and high-end networking. PVC at ₹199 signals tech-forward professionalism without ostentation.
 
 **Efficiency bias:** Gujarati business culture values time highly. "One tap" messaging resonates because it promises faster networking and faster review collection — both measurable in minutes saved daily.
 
@@ -173,7 +173,7 @@ Ahmedabad is Gujarat's commercial capital with distinct business culture charact
 
 **Local trust premium:** Buyers prefer vendors they can call, visit, or reach via WhatsApp with a real person. "Made in Ahmedabad" and a South Bopal address convert skeptical first-time buyers who distrust faceless e-commerce.
 
-**Price anchoring:** ₹499 vs ₹999/year subscription makes one-time purchase feel like obvious value. ₹799 standee vs ₹5,000/month social media agency fee frames review collection as affordable marketing.
+**Price anchoring:** ₹199 vs ₹999/year subscription makes one-time purchase feel like obvious value. ₹799 standee vs ₹5,000/month social media agency fee frames review collection as affordable marketing.
 
 **Bulk negotiation expectation:** Corporate and BNI group orders expect 10–15% volume discount — pricing page should show bulk tiers to pre-empt negotiation.
 
@@ -190,7 +190,7 @@ Ahmedabad is Gujarat's commercial capital with distinct business culture charact
 
 1. **Ahmedabad manufacturer, not reseller** — In-house design, printing, NFC programming, and QC at South Bopal studio. Customers can visit.
 2. **Dual product mastery** — Only local provider specializing in both networking NFC cards AND Google review products under one brand.
-3. **Zero subscription model** — One-time purchase from ₹499; NFC chip works indefinitely; reprogramming included.
+3. **Zero subscription model** — One-time purchase from ₹199; NFC chip works indefinitely; reprogramming included.
 4. **Free professional design** — Mockup within 24 hours; no design fees unlike many competitors charging ₹200–500 extra.
 5. **NFC + QR dual technology** — Universal compatibility including older phones; no app required.
 6. **Reprogrammable NTAG chips** — Update destination URL when phone number, website, or review link changes — no reorder needed.
@@ -237,7 +237,7 @@ TapRate competes primarily in tier 2 while differentiating against tiers 1 and 3
 - **Pricing:** PVC from ~₹599–799; metal ₹1,800+
 - **Strengths:** Brand recognition in Ahmedabad networking circles; Prahladnagar office credibility; active social media
 - **Weaknesses:** Less emphasis on Google review standees; website SEO weaker; no transparent pricing page; card-focused messaging
-- **TapRate counter:** Lead with review standee specialization + South Bopal manufacturing story + lower entry price (₹499) + superior content/SEO strategy
+- **TapRate counter:** Lead with review standee specialization + South Bopal manufacturing story + lower entry price (₹199) + superior content/SEO strategy
 
 ### 1Card (Bengaluru — National)
 - **Positioning:** "India's first smart business card platform" — 11+ years, enterprise clients
@@ -287,7 +287,7 @@ TapRate competes primarily in tier 2 while differentiating against tiers 1 and 3
 | Review standees | ★★★★★ | ★★★ | ★★ | ★★★★★ | ★★ | ★★ | ★★★★ |
 | NFC business cards | ★★★★★ | ★★★★★ | ★★★★★ | ★★★ | ★★★★ | ★★★ | ★★★★ |
 | No subscription | ★★★★★ | ★★★★ | ★★ | ★★ | ★★ | ★★★★★ | ★★★★★ |
-| Entry price | ₹499 | ~₹599 | ~₹600 | ~₹899 | ~₹999 | ~₹399 | ~₹450 |
+| Entry price | ₹199 | ~₹599 | ~₹600 | ~₹899 | ~₹999 | ~₹399 | ~₹450 |
 | Free design | ★★★★★ | ★★★ | ★★★★ | ★★★ | ★★★ | ★ | ★★★ |
 | Website/SEO | ★★★★★ | ★★★ | ★★★★★ | ★★★★ | ★★★★ | ★★★ | ★★ |
 | Corporate/GST | ★★★★★ | ★★★★ | ★★★★★ | ★★★ | ★★★★ | ★★ | ★★★★ |
@@ -297,7 +297,7 @@ TapRate competes primarily in tier 2 while differentiating against tiers 1 and 3
 No Ahmedabad competitor simultaneously offers:
 - In-house manufacturing with walk-in studio
 - Review standee category leadership
-- Transparent published pricing (₹499/₹799/₹1,499/₹349)
+- Transparent published pricing (₹199/₹799/₹999/₹349)
 - Zero subscription model
 - Aggressive local SEO + content marketing strategy
 - Dual expertise in networking AND review products

@@ -43,8 +43,8 @@ $body
 # PRODUCTS
 Ensure-Dir "$root\products"
 $products = @(
-  @{s="nfc-smart-business-card";t="NFC Smart Business Card";d="Premium PVC NFC business card with chip and QR backup. Share your digital profile with one tap. From Rs 499. Made in Ahmedabad.";p="499";tag="Best Seller"},
-  @{s="metal-nfc-business-card";t="Metal NFC Business Card";d="Laser-engraved stainless steel NFC card for executives. Premium, water-resistant. From Rs 1,499. TapRate Ahmedabad.";p="1499";tag="Premium"},
+  @{s="nfc-smart-business-card";t="NFC Smart Business Card";d="Premium PVC NFC business card with chip and QR backup. Share your digital profile with one tap. From Rs 199. Made in Ahmedabad.";p="199";tag="Best Seller"},
+  @{s="metal-nfc-business-card";t="Metal NFC Business Card";d="Laser-engraved stainless steel NFC card for executives. Premium, water-resistant. From Rs 999. TapRate Ahmedabad.";p="999";tag="Premium"},
   @{s="google-review-nfc-standee";t="Google Review NFC Standee";d="Acrylic counter standee with NFC and QR opens Google review page instantly. Custom branded from Rs 799.";p="799";tag="Top Rated"},
   @{s="google-review-nfc-card";t="Google Review NFC Card";d="Pocket review card for staff handout at checkout. Branded NFC review collection from Rs 349.";p="349";tag="Review"},
   @{s="corporate-team-bundle";t="Corporate Team Bundle";d="Bulk NFC card rollout for teams 10-500+. GST invoicing, uniform branding, dedicated support.";p="0";tag="Enterprise"}
@@ -59,7 +59,7 @@ foreach ($pr in $products) {
 # SERVICES
 Ensure-Dir "$root\services"
 $services = @(
-  @{s="nfc-business-cards";t="NFC Business Card Printing";d="Custom NFC business card design, printing, and programming in Ahmedabad. PVC and metal. Free design from Rs 499."},
+  @{s="nfc-business-cards";t="NFC Business Card Printing";d="Custom NFC business card design, printing, and programming in Ahmedabad. PVC and metal. Free design from Rs 199."},
   @{s="google-review-stands";t="Google Review Stand Design";d="Custom Google review NFC standees for restaurants, salons, and retail. Boost local SEO from Rs 799."},
   @{s="digital-networking";t="Digital Networking Solutions";d="Complete digital identity packages with NFC cards, profile pages, and link hubs for Ahmedabad businesses."},
   @{s="corporate-branding";t="Corporate Branding Solutions";d="Team NFC card rollouts, promotional products, and brand-compliant manufacturing for Gujarat corporates."},
@@ -82,7 +82,7 @@ $locs = @(
   @{s="rajkot";t="NFC Solutions in Rajkot";d="Custom NFC business cards and Google review standees shipped to Rajkot and Saurashtra from TapRate Ahmedabad.";areas="Kalawad Road, University Road, Raiya Road"}
 )
 foreach ($lo in $locs) {
-  $body = "<section class=`"section`"><div class=`"container two-col reveal`"><div><h2>TapRate Serves $($lo.t -replace 'NFC.*in ','')</h2><p style=`"color:var(--color-gray-500);margin:1rem 0`">$($lo.d)</p><h3 style=`"margin:1.5rem 0 .75rem`">Areas Covered</h3><p style=`"color:var(--color-gray-500)`">$($lo.areas)</p><h3 style=`"margin:1.5rem 0 .75rem`">Popular Products</h3><ul><li><a href=`"../products/nfc-smart-business-card.html`">NFC Business Card</a> - from Rs 499</li><li><a href=`"../products/google-review-nfc-standee.html`">Review Standee</a> - from Rs 799</li></ul></div><div class=`"map-container`"><iframe src=`"https://maps.google.com/maps?q=South+Bopal+Ahmedabad&output=embed`" loading=`"lazy`" title=`"TapRate South Bopal`"></iframe></div></div></section>"
+  $body = "<section class=`"section`"><div class=`"container two-col reveal`"><div><h2>TapRate Serves $($lo.t -replace 'NFC.*in ','')</h2><p style=`"color:var(--color-gray-500);margin:1rem 0`">$($lo.d)</p><h3 style=`"margin:1.5rem 0 .75rem`">Areas Covered</h3><p style=`"color:var(--color-gray-500)`">$($lo.areas)</p><h3 style=`"margin:1.5rem 0 .75rem`">Popular Products</h3><ul><li><a href=`"../products/nfc-smart-business-card.html`">NFC Business Card</a> - from Rs 199</li><li><a href=`"../products/google-review-nfc-standee.html`">Review Standee</a> - from Rs 799</li></ul></div><div class=`"map-container`"><iframe src=`"https://maps.google.com/maps?q=South+Bopal+Ahmedabad&output=embed`" loading=`"lazy`" title=`"TapRate South Bopal`"></iframe></div></div></section>"
   $html = Page 1 "" "$($lo.t) | TapRate" $lo.d "https://www.taprate.in/locations/$($lo.s).html" "<a href=`"../index.html`">Home</a> <span>/</span> <a href=`"../locations.html`">Locations</a> <span>/</span> $($lo.s)" $lo.t $lo.d $body
   Set-Content "$root\locations\$($lo.s).html" $html -Encoding UTF8
 }
@@ -100,7 +100,7 @@ $inds = @(
   @{s="freelancers-consultants";t="Freelancers and Consultants";i="Stand out at BNI and networking events with premium TapRate NFC cards."}
 )
 foreach ($in in $inds) {
-  $body = "<section class=`"section`"><div class=`"container reveal`"><h2>NFC Solutions for $($in.t)</h2><p style=`"color:var(--color-gray-500);margin:1rem 0 2rem;max-width:720px`">$($in.i)</p><div class=`"card-grid`"><div class=`"card`"><div class=`"card__body`"><h3>Google Review Standee</h3><p class=`"card__desc`">Counter-ready review collection.</p><a href=`"../products/google-review-nfc-standee.html`" class=`"card__link`">From Rs 799</a></div></div><div class=`"card`"><div class=`"card__body`"><h3>NFC Business Card</h3><p class=`"card__desc`">One-tap digital networking.</p><a href=`"../products/nfc-smart-business-card.html`" class=`"card__link`">From Rs 499</a></div></div></div></div></section>"
+  $body = "<section class=`"section`"><div class=`"container reveal`"><h2>NFC Solutions for $($in.t)</h2><p style=`"color:var(--color-gray-500);margin:1rem 0 2rem;max-width:720px`">$($in.i)</p><div class=`"card-grid`"><div class=`"card`"><div class=`"card__body`"><h3>Google Review Standee</h3><p class=`"card__desc`">Counter-ready review collection.</p><a href=`"../products/google-review-nfc-standee.html`" class=`"card__link`">From Rs 799</a></div></div><div class=`"card`"><div class=`"card__body`"><h3>NFC Business Card</h3><p class=`"card__desc`">One-tap digital networking.</p><a href=`"../products/nfc-smart-business-card.html`" class=`"card__link`">From Rs 199</a></div></div></div></div></section>"
   $html = Page 1 "industries" "NFC for $($in.t) | TapRate Ahmedabad" $in.i "https://www.taprate.in/industries/$($in.s).html" "<a href=`"../index.html`">Home</a> <span>/</span> <a href=`"../industries.html`">Industries</a> <span>/</span> $($in.t)" "NFC Solutions for $($in.t)" $in.i $body
   Set-Content "$root\industries\$($in.s).html" $html -Encoding UTF8
 }
